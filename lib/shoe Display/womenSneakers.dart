@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:timberfy/models/cart.dart';
-import 'package:timberfy/models/shoe.dart';
 
 class womenSneakers extends StatefulWidget {
   const womenSneakers({super.key});
@@ -10,15 +9,15 @@ class womenSneakers extends StatefulWidget {
 }
 
 class _womenSneakersState extends State<womenSneakers> {
-  @override
   final Cart cart = Cart();
+  @override
   Widget build(BuildContext context) {
     final sneakers = cart
         .getShoeList()
-        .where((s) => s.gender == "women" && s.type == "sneakers")
+        .where((s) => s.gender == "female" && s.type == "sneakers")
         .toList();
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
+    return Container(
+      margin: EdgeInsets.only(bottom: 15),
       child: Container(
         child: ListView.builder(
           itemCount: sneakers.length,
@@ -27,9 +26,41 @@ class _womenSneakersState extends State<womenSneakers> {
             return Row(
               children: [
                 SizedBox(
-                  width: 150,
-                  height: 150,
+                  width: 140,
+                  height: 140,
                   child: Image.asset(shoe.imagePath.first, fit: BoxFit.contain),
+                ),
+                SizedBox(width: 10),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        shoe.name,
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                        ),
+                      ),
+                      SizedBox(height: 5),
+                      Text(
+                        shoe.briefDescription,
+                        style: TextStyle(
+                          fontSize: 14,
+                          color: Colors.grey[500],
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      SizedBox(height: 10),
+                      Text(
+                        "\$${shoe.price}",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ],
             );

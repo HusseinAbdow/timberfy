@@ -133,6 +133,20 @@ class Cart {
         "lib/assets/images/men/boots/timbergrey3.png",
       ],
     ),
+    Shoe(
+      name: "Stone Street Grey",
+      mainDescription:
+          "Grey leather with a modern twist. Durable outsole for confident movement.",
+      briefDescription: "Cool tone, tough step.",
+      gender: 'male',
+      type: 'boots',
+      price: '215.00',
+      imagePath: [
+        "lib/assets/images/men/boots/stonestreetgrey1.png",
+        "lib/assets/images/men/boots/stonestreetgrey2.png",
+        "lib/assets/images/men/boots/stonestreetgrey3.png",
+      ],
+    ),
 
     // Low
     Shoe(
@@ -190,9 +204,9 @@ class Cart {
       type: 'sneakers',
       price: '160.00',
       imagePath: [
-        "lib/assets/images/women/sneakers/greenstirde-blue1.png",
-        "lib/assets/images/women/sneakers/greenstirde-blue2.png",
-        "lib/assets/images/women/sneakers/greenstirde-blue3.png",
+        "lib/assets/images/women/sneakers/greenstride-blue1.png",
+        "lib/assets/images/women/sneakers/greenstride-blue2.png",
+        "lib/assets/images/women/sneakers/greenstride-blue3.png",
       ],
     ),
     Shoe(
@@ -304,6 +318,7 @@ class Cart {
       type: 'boots',
       price: '225.00',
       imagePath: [
+        "lib/assets/images/women/boots/stonestreetwhite1.png",
         "lib/assets/images/women/boots/stonestreetwhite2.png",
         "lib/assets/images/women/boots/stonestreetwhite3.png",
       ],

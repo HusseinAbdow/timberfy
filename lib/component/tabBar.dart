@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 class tabBar extends StatelessWidget {
   final void Function(int)? onTap;
 
-
-tabBar({super.key,  this.onTap, });
+  tabBar({super.key, this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +16,7 @@ tabBar({super.key,  this.onTap, });
 
           Tab(child: Text("low Boots")),
         ],
-        onTap:onTap
+        onTap: onTap,
       ),
     );
   }

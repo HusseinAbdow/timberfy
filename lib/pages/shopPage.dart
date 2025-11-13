@@ -28,51 +28,54 @@ class _shopPageState extends State<shopPage> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  "Our Best\nCollections Are Here",
-                  style: GoogleFonts.oswald(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 30,
+      child: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                "Our Best\nCollections Are Here",
+                style: GoogleFonts.oswald(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 30,
+                ),
+              ),
+              SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "\"Step into Your Legacy\"",
+                    style: GoogleFonts.oswald(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                      color: Colors.grey,
+                    ),
                   ),
-                ),
-                SizedBox(height: 20),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "\"Step into Your Legacy\"",
-                      style: GoogleFonts.oswald(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20,
-                        color: Colors.grey,
-                      ),
-                    ),
-                    dropDown(
-                      onChanged: (String? newValue) {
-                        setState(() {
-                          _selectedValue = newValue!;
-                        });
-                      },
-                      value: _selectedValue,
-                    ),
-                  ],
-                ),
-              ],
-            ),
+                  dropDown(
+                    onChanged: (String? newValue) {
+                      setState(() {
+                        _selectedValue = newValue!;
+                      });
+                    },
+                    value: _selectedValue,
+                  ),
+                ],
+              ),
+              SizedBox(height: 10),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.65,
+                child: _selectedValue == "men"
+                    ? menShoeTile()
+                    : womenShoeTile(),
+              ),
+              
+            ],
           ),
-
-          Expanded(
-            child: _selectedValue == "men" ? menShoeTile() : womenShoeTile(),
-          ),
-        ],
+        ),
       ),
     );
   }
 }
+

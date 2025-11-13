@@ -18,61 +18,59 @@ class _menSneakersState extends State<menSneakers> {
         .where((s) => s.type == "sneakers" && s.gender == "male")
         .toList();
 
-    return Padding(
-      padding: const EdgeInsets.only(top: 0, right: 8, bottom: 5),
-      child: Container(
-        child: ListView.builder(
-          itemCount: sneakers.length,
-          itemBuilder: (context, index) {
-            final shoe = sneakers[index];
-            return Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                SizedBox(
-                  width: 150, // fixed width
-                  height: 150, // fixed height
-                  child: Image.asset(shoe.imagePath.first, fit: BoxFit.contain),
-                ),
-                SizedBox(width: 10),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        shoe.name,
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
-                        ),
-                      ),
+    return Container(
+      margin: const EdgeInsets.only(bottom: 15),
 
-                      // Space between name and description
-                      SizedBox(height: 3),
-                      Text(
-                        shoe.briefDescription,
-                        style: TextStyle(
-                          fontSize: 14,
-                          color: Colors.grey[500],
-                          fontWeight: FontWeight.bold,
-                        ),
+      child: ListView.builder(
+        itemCount: sneakers.length,
+        itemBuilder: (context, index) {
+          final shoe = sneakers[index];
+          return Row(
+            children: [
+              SizedBox(
+                width: 140,
+                height: 140,
+                child: Image.asset(shoe.imagePath.first, fit: BoxFit.contain),
+              ),
+              SizedBox(width: 10),
+
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      shoe.name,
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
                       ),
-                      SizedBox(
-                        height: 15,
-                      ), // Space between description and price
-                      Text(
-                        "\$${shoe.price}",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18,
-                        ),
+                    ),
+
+                    SizedBox(height: 5),
+                    Text(
+                      shoe.briefDescription,
+                      style: TextStyle(
+                        fontSize: 14,
+                        color: Colors.grey[500],
+                        fontWeight: FontWeight.bold,
                       ),
-                    ],
-                  ),
+                    ),
+
+                    SizedBox(height: 10),
+
+                    Text(
+                      "\$${shoe.price}",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                      ),
+                    ),
+                  ],
                 ),
-              ],
-            );
-          },
-        ),
+              ),
+            ],
+          );
+        },
       ),
     );
   }
