@@ -13,6 +13,7 @@ class Cart {
       gender: 'male',
       type: 'sneakers',
       price: '168.00',
+      
       imagePath: [
         "lib/assets/images/men/sneakers/greenstride-blue1.png",
         "lib/assets/images/men/sneakers/greenstride-blue2.png",
@@ -367,7 +368,29 @@ class Cart {
       ],
     ),
   ];
+
+  //list of shoes in cart
+  List<Shoe> userCart = [];
+
+  //return shoes in cart
+  List<Shoe> getShoeCart(){
+    return userCart;
+  }
+
+  //add shoe to cart
+  void addShoeToCart(Shoe shoe){
+    userCart.add(shoe);
+  }
+
+  //remove shoe from cart
+
+  void removeShoeFromCart(Shoe shoe){
+    userCart.remove(shoe);
+  }
+
+  //get  list of shoes
   List<Shoe> getShoeList() {
     return _shoes;
   }
+ 
 }

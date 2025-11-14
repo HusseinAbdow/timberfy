@@ -5,6 +5,7 @@ class Shoe {
   late final String price;
   late final String gender;
   late final String type;
+  // late final String color;
   late final List<String> imagePath;
   Shoe({
     required this.name,
@@ -14,5 +15,6 @@ class Shoe {
     required this.type,
     required this.price,
     required this.imagePath,
+    // required this.color,
   });
 }
