@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:timberfy/models/cart.dart';
-import 'package:timberfy/models/shoe.dart';
 import 'package:timberfy/pages/shoeDetails.dart';
 
 class menSneakers extends StatefulWidget {
@@ -29,9 +28,9 @@ class _menSneakersState extends State<menSneakers> {
           final shoe = sneakers[index];
           return GestureDetector(
             onTap: () {
-              Navigator.push
-              (context, 
-              MaterialPageRoute(builder: (_)=> shoeDetails(shoe: shoe))
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => shoeDetails(shoe: shoe)),
               );
             },
             child: Row(
@@ -41,11 +40,14 @@ class _menSneakersState extends State<menSneakers> {
                   child: SizedBox(
                     width: 140,
                     height: 140,
-                    child: Image.asset(shoe.imagePath.first, fit: BoxFit.contain),
+                    child: Image.asset(
+                      shoe.imagePath.first,
+                      fit: BoxFit.contain,
+                    ),
                   ),
                 ),
                 SizedBox(width: 10),
-            
+
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -57,7 +59,7 @@ class _menSneakersState extends State<menSneakers> {
                           fontSize: 20,
                         ),
                       ),
-            
+
                       SizedBox(height: 5),
                       Text(
                         shoe.briefDescription,
@@ -67,9 +69,9 @@ class _menSneakersState extends State<menSneakers> {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-            
+
                       SizedBox(height: 10),
-            
+
                       Text(
                         "\$${shoe.price}",
                         style: TextStyle(
