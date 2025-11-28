@@ -18,7 +18,7 @@ class SignIn extends StatelessWidget {
               SizedBox(
                 width: MediaQuery.of(context).size.width * 0.76,
                 child: Image.asset(
-                  "lib/assets/images/onBoardingImages/timberlandlogo.png",
+                  "assets/images/onBoardingImages/timberlandlogo.png",
                   fit: BoxFit.contain,
                   width: double.infinity,
                 ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:timberfy/configs/database.dart';
 import 'package:timberfy/models/shoe.dart';
 import 'package:timberfy/pages/similarShoes.dart';
 
@@ -15,15 +16,31 @@ class shoeDetails extends StatefulWidget {
 
 class _shoeDetailsState extends State<shoeDetails> {
   late PageController _controller;
+  late ValueNotifier<bool> isLikedNotifier;
+  late ValueNotifier<bool> isInCartNotifier;
+
   @override
   void initState() {
     super.initState();
+
     _controller = PageController();
+
+    isLikedNotifier = ValueNotifier<bool>(false);
+
+    DatabaseHelper.instance.isLiked(widget.shoe.id).then((value) {
+      isLikedNotifier.value = value;
+    });
+    isInCartNotifier = ValueNotifier<bool>(false);
+
+    DatabaseHelper.instance.isInCart(widget.shoe.id).then((value) {
+      isInCartNotifier.value = value;
+    });
   }
 
   @override
   void dispose() {
     _controller.dispose();
+    isLikedNotifier.dispose();
     super.dispose();
   }
 
@@ -67,8 +84,34 @@ class _shoeDetailsState extends State<shoeDetails> {
                             ),
                           ),
                         ),
-                        //heart button
-                        Icon(Icons.favorite_border, size: 35),
+                        ValueListenableBuilder<bool>(
+                          valueListenable: isLikedNotifier,
+                          builder: (context, isLiked, _) {
+                            return GestureDetector(
+                              onTap: () async {
+                                if (isLiked) {
+                                  await DatabaseHelper.instance.unlikeShoe(
+                                    widget.shoe.id,
+                                  );
+                                } else {
+                                  await DatabaseHelper.instance.likeShoe(
+                                    widget.shoe.id,
+                                  );
+                                }
+
+                                isLikedNotifier.value =
+                                    !isLiked; // updates ONLY icon
+                              },
+                              child: Icon(
+                                isLiked
+                                    ? Icons.favorite
+                                    : Icons.favorite_border,
+                                size: 35,
+                                color: isLiked ? Colors.red : Colors.black,
+                              ),
+                            );
+                          },
+                        ),
                       ],
                     ),
                   ),
@@ -80,7 +123,9 @@ class _shoeDetailsState extends State<shoeDetails> {
                       itemCount: widget.shoe.imagePath.length,
                       itemBuilder: (context, index) {
                         return Hero(
-                          tag: "${widget.shoe.hashCode}-$index",
+                          tag: index == 0
+                              ? "shoe-${widget.shoe.id}" // MUST MATCH LIST PAGE
+                              : "shoe-${widget.shoe.id}-$index", // different tag for other photos
                           child: Image.asset(
                             widget.shoe.imagePath[index],
                             fit: BoxFit.contain,
@@ -151,29 +196,49 @@ class _shoeDetailsState extends State<shoeDetails> {
                 SizedBox(height: 10),
                 Text(
                   "Similar shoes",
-                  style: TextStyle(fontSize: 23, fontWeight: FontWeight.bold),
+                  style: GoogleFonts.oswald(
+                    fontSize: 23,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
                 SizedBox(height: 10),
-                similarShoes(),
+
+                //class that displays similar shoes
+                similarShoes(shoe: widget.shoe),
 
                 SizedBox(height: 40),
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.black,
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  height: 70,
-                  width: MediaQuery.of(context).size.width,
-                  child: Center(
-                    child: Text(
-                      "Add to Cart",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 25,
-                        color: Colors.white,
+                ValueListenableBuilder<bool>(
+                  valueListenable: isInCartNotifier,
+                  builder: (context, inCart, _) {
+                    return GestureDetector(
+                      onTap: () async {
+                        if (!inCart) {
+                          await DatabaseHelper.instance.addToCart(
+                            widget.shoe.id,
+                          );
+                          isInCartNotifier.value = true;
+                        }
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: inCart ? Colors.green : Colors.black,
+                          borderRadius: BorderRadius.circular(100),
+                        ),
+                        height: 70,
+                        width: MediaQuery.of(context).size.width,
+                        child: Center(
+                          child: Text(
+                            inCart ? "Added ✔" : "Add to Cart",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 25,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
                       ),
-                    ),
-                  ),
+                    );
+                  },
                 ),
               ],
             ),

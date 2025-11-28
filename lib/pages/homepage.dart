@@ -35,7 +35,6 @@ class _homePageState extends State<homePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       //app bar
       appBar: AppBar(
         //icon for drawer
@@ -66,7 +65,7 @@ class _homePageState extends State<homePage> {
         child: ListView(
           children: [
             Image.asset(
-              "lib/assets/images/onBoardingImages/timberlandlogo.png",
+              "assets/images/onBoardingImages/timberlandlogo.png",
               fit: BoxFit.contain,
               width: double.infinity,
             ),

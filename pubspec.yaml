@@ -35,6 +35,8 @@ dependencies:
   flutter_svg: ^2.0.0
   google_nav_bar: ^5.0.7
   provider:
+  animations: ^2.0.8
+  postgres: ^2.6.2
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -59,13 +61,14 @@ flutter:
   uses-material-design: true
 
   assets:
-    - lib/assets/images/onBoardingImages/
-    - lib/assets/images/men/sneakers/
-    - lib/assets/images/men/boots/
-    - lib/assets/images/men/low/
-    - lib/assets/images/women/sneakers/
-    - lib/assets/images/women/boots/
-    - lib/assets/images/women/low/
+    - assets/images/onBoardingImages/
+    - assets/images/men/low/
+    - assets/images/men/boots/
+    - assets/images/men/sneakers/
+    - assets/images/women/sneakers/
+    - assets/images/women/boots/
+    - assets/images/women/low/
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

@@ -3,7 +3,6 @@ import 'package:timberfy/pages/homepage.dart';
 import 'package:timberfy/pages/onBoardingScreen.dart';
 import 'package:timberfy/pages/signIn.dart';
 
-
 void main() {
   runApp(MyApp());
 }
@@ -28,7 +27,6 @@ class MyApp extends StatelessWidget {
       },
 
       debugShowCheckedModeBanner: false,
-
       home: onBoardingScreen(),
     );
   }
