@@ -71,7 +71,7 @@ lib/
 - Shoe details
 - Cart
 - Profile
-- Sign in
+- Sign in{comming soon}
 - Similar shoes
 
 ---
