@@ -207,6 +207,7 @@ psql -d timberfydb -f timberfydb.sql
 Computer Engineering Student – Flutter & Backend focused
 
 🔗 GitHub: [https://github.com/HusseinAbdow](https://github.com/HusseinAbdow)
+🔗 LinkedIn:www.linkedin.com/in/husseinabdow
 
 ```
 
