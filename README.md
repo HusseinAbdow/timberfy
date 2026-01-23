@@ -208,13 +208,3 @@ Computer Engineering Student – Flutter & Backend focused
 
 🔗 GitHub: [https://github.com/HusseinAbdow](https://github.com/HusseinAbdow)
 🔗 LinkedIn:www.linkedin.com/in/husseinabdow
-
-```
-
----
-
-Next steps (when you’re ready 😏):
-- 📸 Add screenshot images + preview grid
-- 🎥 Add demo video link
-- 🧵 Then we cook the **LinkedIn post** 🔥
-```
