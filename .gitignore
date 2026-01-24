@@ -65,4 +65,9 @@ lib/configs/test_db.dart
 
 # Optional: ignore all local env-like files
 *.env
+# Ignore all sql files by default
 *.sql
+
+# BUT allow the main shared database file
+!database/timberfydb.sql
+
