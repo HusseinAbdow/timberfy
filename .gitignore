@@ -61,7 +61,6 @@ web/build/
 # Local config & secrets (IMPORTANT)
 # =========================
 lib/configs/config.dart
-lib/configs/database.dart
 lib/configs/test_db.dart
 
 # Optional: ignore all local env-like files

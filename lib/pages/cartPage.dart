@@ -3,6 +3,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:timberfy/configs/database.dart';
 import 'package:timberfy/models/shoe.dart';
 
+// Cart page screen
+// This page is responsible for showing items added to the cart
 class cartPage extends StatefulWidget {
   const cartPage({super.key});
 
@@ -11,15 +13,21 @@ class cartPage extends StatefulWidget {
 }
 
 class _CartPageState extends State<cartPage> {
+  // Holds all shoes currently in the cart
   List<Shoe> _cartItems = [];
+
+  // Used to control loading UI while fetching data
   bool _loading = true;
 
   @override
   void initState() {
     super.initState();
+
+    // Load cart items as soon as the page is created
     _loadCart();
   }
 
+  // Fetch cart data from local database
   void _loadCart() async {
     final items = await DatabaseHelper.instance.getCartItems();
     setState(() {
@@ -30,11 +38,13 @@ class _CartPageState extends State<cartPage> {
 
   @override
   Widget build(BuildContext context) {
+    // Shortcut for database instance
     final db = DatabaseHelper.instance;
 
     return Scaffold(
       body: Column(
         children: [
+          // Page header text
           Text(
             "My cart",
             style: GoogleFonts.oswald(
@@ -43,10 +53,12 @@ class _CartPageState extends State<cartPage> {
             ),
           ),
 
-          // ---- LOADING ----
+          // ---- LOADING STATE ----
+          // Shown while cart data is still loading
           if (_loading)
             const Expanded(child: Center(child: CircularProgressIndicator()))
-          // ---- EMPTY CART ----
+          // ---- EMPTY CART STATE ----
+          // Shown when there are no items in the cart
           else if (_cartItems.isEmpty)
             const Expanded(
               child: Center(
@@ -56,11 +68,13 @@ class _CartPageState extends State<cartPage> {
                 ),
               ),
             )
-          // ---- CART LIST + TOTAL + BUY ----
+          // ---- CART CONTENT ----
+          // Shows item list, total price and buy button
           else
             Expanded(
               child: Column(
                 children: [
+                  // List of cart items
                   Expanded(
                     child: ListView.builder(
                       itemCount: _cartItems.length,
@@ -77,6 +91,7 @@ class _CartPageState extends State<cartPage> {
                             padding: const EdgeInsets.all(12),
                             child: Row(
                               children: [
+                                // Shoe image preview
                                 SizedBox(
                                   height: 120,
                                   width: 120,
@@ -88,6 +103,7 @@ class _CartPageState extends State<cartPage> {
 
                                 const SizedBox(width: 12),
 
+                                // Shoe name and price
                                 Expanded(
                                   child: Column(
                                     crossAxisAlignment:
@@ -112,6 +128,7 @@ class _CartPageState extends State<cartPage> {
                                   ),
                                 ),
 
+                                // Delete item from cart
                                 IconButton(
                                   icon: const Icon(
                                     Icons.delete,
@@ -120,6 +137,7 @@ class _CartPageState extends State<cartPage> {
                                   onPressed: () async {
                                     await db.removeFromCart(shoe.id);
 
+                                    // Remove item locally to update UI instantly
                                     setState(() {
                                       _cartItems.removeAt(
                                         index,
@@ -135,7 +153,8 @@ class _CartPageState extends State<cartPage> {
                     ),
                   ),
 
-                  // ---- TOTAL ----
+                  // ---- TOTAL PRICE ----
+                  // Calculates total price of all items in cart
                   Padding(
                     padding: const EdgeInsets.symmetric(
                       horizontal: 16,
@@ -163,6 +182,7 @@ class _CartPageState extends State<cartPage> {
                   ),
 
                   // ---- BUY BUTTON ----
+                  // Final action button for completing purchase
                   Container(
                     width: double.infinity,
                     margin: const EdgeInsets.symmetric(

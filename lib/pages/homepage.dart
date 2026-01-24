@@ -4,6 +4,7 @@ import 'package:timberfy/pages/cartPage.dart';
 import 'package:timberfy/pages/profilePage.dart';
 import 'package:timberfy/pages/shopPage.dart';
 
+// Main home page that holds bottom navigation and drawer
 class homePage extends StatefulWidget {
   const homePage({super.key});
 
@@ -12,20 +13,22 @@ class homePage extends StatefulWidget {
 }
 
 class _homePageState extends State<homePage> {
+  // Keeps track of which bottom nav tab is selected
   var _selectedPageIndex = 0;
 
+  // Pages shown based on selected bottom nav index
   final List<Widget> _pages = [
-    //home page
+    // Home / shop screen
     shopPage(),
 
-    //cart page
+    // Cart screen
     cartPage(),
 
-    //profile page
+    // User profile screen
     profilePage(),
   ];
 
-  //on tapping bottom navbar
+  // Called when user taps on bottom navigation bar
   void NavigateBottomNavbar(index) {
     setState(() {
       _selectedPageIndex = index;
@@ -35,22 +38,23 @@ class _homePageState extends State<homePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //app bar
+      // ---- APP BAR ----
       appBar: AppBar(
-        //icon for drawer
+        // Remove shadow for cleaner look
         elevation: 0,
 
+        // Drawer menu icon
         leading: Builder(
           builder: (context) => IconButton(
             icon: Icon(Icons.menu, size: 27, color: Colors.black),
             onPressed: () {
-              //opens drawer
+              // Open drawer when menu icon is tapped
               Scaffold.of(context).openDrawer();
             },
           ),
         ),
 
-        //search bar inside appbar
+        // Search icon on the right side
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 8),
@@ -59,20 +63,27 @@ class _homePageState extends State<homePage> {
         ],
       ),
 
+      // Displays the selected page from bottom navigation
       body: _pages[_selectedPageIndex],
 
+      // ---- DRAWER ----
       drawer: Drawer(
         child: ListView(
           children: [
+            // App / brand logo
             Image.asset(
               "assets/images/onBoardingImages/timberlandlogo.png",
               fit: BoxFit.contain,
               width: double.infinity,
             ),
+
+            // Home option
             ListTile(
               leading: Icon(Icons.home, size: 35, color: Colors.black),
               title: Text('Home', style: TextStyle(color: Colors.black)),
             ),
+
+            // Info option
             ListTile(
               leading: Icon(Icons.info, size: 35, color: Colors.black),
               title: Text('Home', style: TextStyle(color: Colors.black)),
@@ -80,6 +91,8 @@ class _homePageState extends State<homePage> {
           ],
         ),
       ),
+
+      // ---- BOTTOM NAVIGATION BAR ----
       bottomNavigationBar: BottomNavBar(
         onTabChange: (index) => NavigateBottomNavbar(index),
       ),
