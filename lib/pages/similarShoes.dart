@@ -1,4 +1,3 @@
-import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 import 'package:timberfy/configs/database.dart';
 import 'package:timberfy/models/shoe.dart';
@@ -44,7 +43,13 @@ class similarShoes extends StatelessWidget {
         }
 
         // Store the fetched similar shoes
-        final similar = snapshot.data!;
+        final similar = snapshot.data!
+            .where((similarShoe) => similarShoe.id != shoe.id)
+            .toList();
+
+        if (similar.isEmpty) {
+          return Center(child: Text('No similar shoes found.'));
+        }
 
         return SizedBox(
           // Fixed height for horizontal shoe list
@@ -64,23 +69,8 @@ class similarShoes extends StatelessWidget {
                 // Navigate to shoe details when tapped
                 onTap: () {
                   Navigator.of(context).push(
-                    PageRouteBuilder(
-                      // Custom page transition duration
-                      transitionDuration: Duration(milliseconds: 350),
-
-                      // Target page
-                      pageBuilder: (_, __, ___) => shoeDetails(shoe: s),
-
-                      // Animated transition between pages
-                      transitionsBuilder: (_, animation, __, child) {
-                        return SharedAxisTransition(
-                          animation: animation,
-                          secondaryAnimation: animation,
-                          // Scaled animation gives a smooth zoom effect
-                          transitionType: SharedAxisTransitionType.scaled,
-                          child: child,
-                        );
-                      },
+                    MaterialPageRoute(
+                      builder: (_) => shoeDetails(key: ValueKey(s.id), shoe: s),
                     ),
                   );
                 },
