@@ -9,6 +9,68 @@ This project was built as a **portfolio & learning project**, combining Flutter 
 
 ---
 
+# 🎉 Timberfy UI Preview
+
+## App Highlights (start)
+- Cart
+  
+  ![cart.png](UI_PICS/screens/other/cart.png)
+- Profile
+  
+  ![profile.png](UI_PICS/screens/other/profile.png)
+
+---
+
+## Onboarding Experience
+
+- Onboarding Slide 1  
+  ![onboard_slide1.png](UI_PICS/onboarding%20screens/onboard_slide1.png)
+- Onboarding Slide 2  
+  ![onboard_slide2.png](UI_PICS/onboarding%20screens/onboard_slide2.png)
+- Onboarding Slide 3  
+  ![onboard_slide3.png](UI_PICS/onboarding%20screens/onboard_slide3.png)
+- Login
+  
+  ![login.png](UI_PICS/onboarding%20screens/login.png)
+
+---
+
+## Men’s Shoes
+
+- Sneakers  
+  ![men_sneakers.png](UI_PICS/screens/men/men_sneakers.png)
+- Boots  
+  ![men_boots.png](UI_PICS/screens/men/men_boots.png)
+- Low Boots  
+  ![men_low_boots.png](UI_PICS/screens/men/men_low_boots.png)
+
+---
+
+## Women’s Shoes
+
+- Sneakers  
+  ![women_sneakers.png](UI_PICS/screens/women/women_sneakers.png)
+- Boots  
+  ![women_boots.png](UI_PICS/screens/women/women_boots.png)
+- Low Boots  
+  ![women_low_boots.png](UI_PICS/screens/women/women_low_boots.png)
+
+---
+
+## Shoe Details
+
+> ⚠️ Note: No images found under `UI_PICS/screens/details/`. Please verify if the details pictures have been added and let me know their exact path. I can update the list once available.
+
+---
+
+## How to Use
+
+- Browse the sneaks and boots for men and women.
+- Check your profile or shopping cart anytime.
+- Smooth onboarding for easy start!
+
+---
+
 ## 📌 Table of Contents
 - [✨ Features](#-features)
 - [📱 App Preview](#-app-preview)
@@ -43,7 +105,6 @@ This project was built as a **portfolio & learning project**, combining Flutter 
 ## 📁 Project Structure
 
 ```
-
 lib/
 ├── component/
 ├── configs/
@@ -53,7 +114,6 @@ lib/
 ├── shoeDisplay/
 ├── shoeTiles/
 └── main.dart
-
 ````
 
 ### 🔹 UI Components
@@ -208,3 +268,4 @@ Computer Engineering Student – Flutter & Backend focused
 
 🔗 GitHub: [https://github.com/HusseinAbdow](https://github.com/HusseinAbdow)
 🔗 LinkedIn:www.linkedin.com/in/husseinabdow
+
