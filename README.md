@@ -1,110 +1,84 @@
+# <h1 align="center">🥾 Timberfy</h1>
 
-🥾 Timberfy
-===========
+<p align="center">
+  A Flutter shopping app inspired by Timberland-style footwear.
+</p>
 
-Timberfy is a **Flutter-based mobile application** inspired by Timberland-style footwear.  
-It focuses on browsing shoes by category, viewing detailed product information, and interacting with a simple cart and likes system.
-
-This project was built as a **portfolio & learning project**, combining Flutter UI with a **local PostgreSQL database** (no cloud).
-
----
-
-# 🎉 Timberfy UI Preview
-
-## App Highlights (start)
-- Cart
-  
-  ![cart.png](UI_PICS/screens/other/cart.png)
-- Profile
-  
-  ![profile.png](UI_PICS/screens/other/profile.png)
+<p align="center">
+  Flutter • PostgreSQL • Mobile UI • Portfolio Project
+</p>
 
 ---
 
-## Onboarding Experience
+## 📱 UI Preview
 
-- Onboarding Slide 1  
-  ![onboard_slide1.png](UI_PICS/onboarding%20screens/onboard_slide1.png)
-- Onboarding Slide 2  
-  ![onboard_slide2.png](UI_PICS/onboarding%20screens/onboard_slide2.png)
-- Onboarding Slide 3  
-  ![onboard_slide3.png](UI_PICS/onboarding%20screens/onboard_slide3.png)
-- Login
-  
-  ![login.png](UI_PICS/onboarding%20screens/login.png)
+### ✨ Main Screens
+
+<p align="center">
+  <img src="UI_PICS/screens/other/profile.png" width="230"/>
+  <img src="UI_PICS/screens/other/cart.png" width="230"/>
+  <img src="UI_PICS/onboarding_screens/login.png" width="230"/>
+</p>
 
 ---
 
-## Men’s Shoes
+### 🚀 Onboarding Experience
 
-- Sneakers  
-  ![men_sneakers.png](UI_PICS/screens/men/men_sneakers.png)
-- Boots  
-  ![men_boots.png](UI_PICS/screens/men/men_boots.png)
-- Low Boots  
-  ![men_low_boots.png](UI_PICS/screens/men/men_low_boots.png)
-
----
-
-## Women’s Shoes
-
-- Sneakers  
-  ![women_sneakers.png](UI_PICS/screens/women/women_sneakers.png)
-- Boots  
-  ![women_boots.png](UI_PICS/screens/women/women_boots.png)
-- Low Boots  
-  ![women_low_boots.png](UI_PICS/screens/women/women_low_boots.png)
+<p align="center">
+  <img src="UI_PICS/onboarding_screens/onboard_slide1.png" width="230"/>
+  <img src="UI_PICS/onboarding_screens/onboard_slide2.png" width="230"/>
+  <img src="UI_PICS/onboarding_screens/onboard_slide3.png" width="230"/>
+</p>
 
 ---
 
-## Shoe Details
+### 👞 Men Collection
 
-> ⚠️ Note: No images found under `UI_PICS/screens/details/`. Please verify if the details pictures have been added and let me know their exact path. I can update the list once available.
-
----
-
-## How to Use
-
-- Browse the sneaks and boots for men and women.
-- Check your profile or shopping cart anytime.
-- Smooth onboarding for easy start!
+<p align="center">
+  <img src="UI_PICS/screens/men/men_sneakers.png" width="230"/>
+  <img src="UI_PICS/screens/men/men_boots.png" width="230"/>
+  <img src="UI_PICS/screens/men/men_low_boots.png" width="230"/>
+</p>
 
 ---
 
-## 📌 Table of Contents
-- [✨ Features](#-features)
-- [📱 App Preview](#-app-preview)
-- [📁 Project Structure](#-project-structure)
-- [🗄️ Database Overview](#-database-overview)
-- [🧱 Database Schema](#-database-schema)
-- [🔗 Entity Relationships](#-entity-relationships)
-- [⚙️ Running the Project](#️-running-the-project)
-- [📌 Notes](#-notes)
-- [👤 Author](#-author)
+### 👠 Women Collection
+
+<p align="center">
+  <img src="UI_PICS/screens/women/women_sneakers.png" width="230"/>
+  <img src="UI_PICS/screens/women/women_boots.png" width="230"/>
+  <img src="UI_PICS/screens/women/women_low_boots.png" width="230"/>
+</p>
 
 ---
 
 ## ✨ Features
 
-- Browse shoes by **gender & category**
-- Shoe detail pages with **multiple images**
-- Like shoes ❤️
-- Add shoes to cart 🛒
-- Reusable Flutter UI components
-- Local PostgreSQL database (realistic backend flow)
-- Clean & scalable folder structure
+* Browse shoes by gender & category
+* Detailed product pages with multiple images
+* Like products ❤️
+* Add items to cart 🛒
+* Reusable Flutter UI components
+* Local PostgreSQL database integration
+* Clean and scalable folder structure
+* Smooth onboarding experience
 
 ---
 
-## 📱 App Preview
+## 🛠️ Tech Stack
 
-🎥 **Screen recording will be added after LinkedIn post**
+| Technology | Usage                     |
+| ---------- | ------------------------- |
+| Flutter    | Mobile application        |
+| Dart       | App logic                 |
+| PostgreSQL | Local database            |
+| SQL        | Database schema & queries |
 
 ---
 
 ## 📁 Project Structure
 
-```
+```bash
 lib/
 ├── component/
 ├── configs/
@@ -114,134 +88,80 @@ lib/
 ├── shoeDisplay/
 ├── shoeTiles/
 └── main.dart
-````
+```
 
-### 🔹 UI Components
-📂 [`lib/component/`](lib/component)
-- Bottom navigation bar
-- Tabs
-- Dropdowns
-- Reusable row items
+### 🔹 Components
 
----
+* Bottom navigation bar
+* Dropdowns
+* Tabs
+* Reusable widgets
 
-### 🔹 App Pages
-📂 [`lib/pages/`](lib/pages)
-- Homepage
-- Shoe details
-- Cart
-- Profile
-- Sign in{comming soon}
-- Similar shoes
+### 🔹 Pages
 
----
+* Home
+* Shoe details
+* Cart
+* Profile
+* Similar shoes
+* Login (coming soon)
 
-### 🔹 Shoe Categories
-📂 [`lib/shoeDisplay/`](lib/shoeDisplay)
-- Men & Women boots
-- Low boots
-- Sneakers
+### 🔹 Categories
+
+* Men boots
+* Women boots
+* Sneakers
+* Low boots
 
 ---
 
 ## 🗄️ Database Overview
 
-Timberfy uses a **local PostgreSQL database** (no Firebase, no cloud).
+Timberfy uses a local PostgreSQL database instead of cloud services.
 
-📄 SQL schema & seed file:  
-➡️ [`database/timberfydb.sql`](database/timberfydb.sql)
+### Main Tables
 
-> Database config files are intentionally **ignored from Git** for security.
+| Table     | Purpose                        |
+| --------- | ------------------------------ |
+| shoe      | Stores shoe information        |
+| shoeimage | Stores multiple product images |
+| cart      | Stores cart items              |
+| likes     | Stores liked products          |
+| appuser   | Demo user information          |
 
----
+📄 SQL File:
 
-## 🧱 Database Schema
+```bash
+database/timberfydb.sql
+```
 
-### 🟫 shoe
-Stores main product info.
-
-| Column | Type |
-|------|------|
-| shoeid | PK |
-| name | text |
-| maindescription | text |
-| briefdescription | text |
-| price | numeric |
-| gender | text |
-| type | text |
-
----
-
-### 🟫 shoeimage
-Stores multiple images per shoe.
-
-| Column | Type |
-|------|------|
-| imageid | PK |
-| shoeid | FK → shoe.shoeid |
-| imagepath | text |
-
----
-
-### 🟫 cart
-Represents cart items.
-
-| Column | Type |
-|------|------|
-| id | PK |
-| shoe_id | int |
-| quantity | int |
-
----
-
-### 🟫 likes
-Tracks liked shoes.
-
-| Column | Type |
-|------|------|
-| shoeid | PK |
-
----
-
-### 🟫 appuser
-Basic demo user table.
-
-| Column | Type |
-|------|------|
-| userid | PK |
-| username | UNIQUE |
-| profilepic | text |
-| password | text |
+> Database configuration files are ignored from Git for security.
 
 ---
 
 ## 🔗 Entity Relationships
 
-- One **shoe** → many **images**
-- Shoes can be:
-  - liked
-  - added to cart
-- Images are loaded via **local asset paths stored in DB**
+* One shoe can have multiple images
+* Shoes can be liked
+* Shoes can be added to cart
+* Images are loaded through local asset paths stored in the database
 
 ---
 
 ## ⚙️ Running the Project
 
-### 1️⃣ Clone repository
+### 1️⃣ Clone the repository
+
 ```bash
 git clone https://github.com/HusseinAbdow/timberfy.git
 cd timberfy
-````
+```
 
----
-
-### 2️⃣ Install Flutter dependencies
+### 2️⃣ Install dependencies
 
 ```bash
 flutter pub get
 ```
-
----
 
 ### 3️⃣ Setup PostgreSQL database
 
@@ -254,18 +174,18 @@ psql -d timberfydb -f timberfydb.sql
 
 ## 📌 Notes
 
-* No cloud services used
-* Database config files are gitignored
-* Project focuses on **UI + data structure**, not production auth
-* Built for learning, showcasing, and iteration
+* No Firebase or cloud services used
+* Built mainly for portfolio and learning purposes
+* Focused on UI design + local data structure
+* Authentication system still under development
 
 ---
 
 ## 👤 Author
 
 **Hussein Abdow**
-Computer Engineering Student – Flutter & Backend focused
 
-🔗 GitHub: [https://github.com/HusseinAbdow](https://github.com/HusseinAbdow)
-🔗 LinkedIn:www.linkedin.com/in/husseinabdow
+Computer Engineering Student focused on Flutter and Backend Development.
 
+* GitHub: [https://github.com/HusseinAbdow](https://github.com/HusseinAbdow)
+* LinkedIn: [https://www.linkedin.com/in/husseinabdow](https://www.linkedin.com/in/husseinabdow)
