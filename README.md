@@ -12,22 +12,16 @@
 
 ## 📱 UI Preview
 
-### ✨ Main Screens
-
-<p align="center">
-  <img src="UI_PICS/screens/other/profile.png" width="230"/>
-  <img src="UI_PICS/screens/other/cart.png" width="230"/>
-  <img src="UI_PICS/onboarding_screens/login.png" width="230"/>
-</p>
-
----
-
 ### 🚀 Onboarding Experience
 
 <p align="center">
-  <img src="UI_PICS/onboarding_screens/onboard_slide1.png" width="230"/>
-  <img src="UI_PICS/onboarding_screens/onboard_slide2.png" width="230"/>
-  <img src="UI_PICS/onboarding_screens/onboard_slide3.png" width="230"/>
+  <img src="UI_PICS/onboarding%20screens/onboard_slide1.png" width="230"/>
+  <img src="UI_PICS/onboarding%20screens/onboard_slide2.png" width="230"/>
+  <img src="UI_PICS/onboarding%20screens/onboard_slide3.png" width="230"/>
+</p>
+
+<p align="center">
+  <img src="UI_PICS/onboarding%20screens/login.png" width="230"/>
 </p>
 
 ---
@@ -48,6 +42,24 @@
   <img src="UI_PICS/screens/women/women_sneakers.png" width="230"/>
   <img src="UI_PICS/screens/women/women_boots.png" width="230"/>
   <img src="UI_PICS/screens/women/women_low_boots.png" width="230"/>
+</p>
+
+---
+
+### 🔍 Shoe Details
+
+<p align="center">
+  <img src="UI_PICS/screens/shoe_details1.png" width="230"/>
+  <img src="UI_PICS/screens/shoe_details2.png" width="230"/>
+</p>
+
+---
+
+### 💼 Other Features
+
+<p align="center">
+  <img src="UI_PICS/screens/other/profile.png" width="230"/>
+  <img src="UI_PICS/screens/other/cart.png" width="230"/>
 </p>
 
 ---
