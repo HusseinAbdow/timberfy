@@ -36,6 +36,38 @@ This project was built as a **portfolio & learning project**, combining Flutter 
 
 ## 📱 App Preview
 
+### 🎯 Quick Highlights
+
+| Cart | Profile | Login |
+|------|---------|-------|
+| <img src="UI_PICS/screens/other/cart.png" width="150" alt="Cart"> | <img src="UI_PICS/screens/other/profile.png" width="150" alt="Profile"> | <img src="UI_PICS/onboarding%20screens/login.png" width="150" alt="Login"> |
+
+---
+
+### 🚀 Onboarding Journey
+
+| Slide 1 | Slide 2 | Slide 3 |
+|---------|---------|---------|
+| <img src="UI_PICS/onboarding%20screens/onboard_slide1.png" width="150" alt="Onboarding 1"> | <img src="UI_PICS/onboarding%20screens/onboard_slide2.png" width="150" alt="Onboarding 2"> | <img src="UI_PICS/onboarding%20screens/onboard_slide3.png" width="150" alt="Onboarding 3"> |
+
+---
+
+### 👟 Men's Collection
+
+| Sneakers | Boots | Low Boots |
+|----------|-------|-----------|
+| <img src="UI_PICS/screens/men/men_sneakers.png" width="150" alt="Men Sneakers"> | <img src="UI_PICS/screens/men/men_boots.png" width="150" alt="Men Boots"> | <img src="UI_PICS/screens/men/men_low_boots.png" width="150" alt="Men Low Boots"> |
+
+---
+
+### 👠 Women's Collection
+
+| Sneakers | Boots | Low Boots |
+|----------|-------|-----------|
+| <img src="UI_PICS/screens/women/women_sneakers.png" width="150" alt="Women Sneakers"> | <img src="UI_PICS/screens/women/women_boots.png" width="150" alt="Women Boots"> | <img src="UI_PICS/screens/women/women_low_boots.png" width="150" alt="Women Low Boots"> |
+
+---
+
 🎥 **Screen recording will be added after LinkedIn post**
 
 ---
