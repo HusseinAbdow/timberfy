@@ -11,7 +11,12 @@
 ---
 
 ## 📱 UI Preview
-- [Live App Demo (LinkedIn)](https://www.linkedin.com/posts/husseinabdow_i-built-timberfy-with-flutter-and-postgresql-ugcPost-7420594022743691264-xCPd/?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEuKLNYB_ef_5a7F5UR8WZe9ocCBe0wY94M)
+
+<p align="center">
+  <a href="https://www.linkedin.com/posts/husseinabdow_i-built-timberfy-with-flutter-and-postgresql-ugcPost-7420594022743691264-xCPd/?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEuKLNYB_ef_5a7F5UR8WZe9ocCBe0wY94M" target="_blank">
+    <img alt="Watch Timberfy Live App Demo" src="https://img.shields.io/badge/%E2%96%B6%20Watch%20Live%20App%20Demo%20on-LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
+  </a>
+</p>
 
 ### 🚀 Onboarding Experience
 
